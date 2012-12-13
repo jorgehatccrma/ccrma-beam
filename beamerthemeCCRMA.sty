@@ -1,0 +1,152 @@
+\mode<presentation>
+
+
+\newif\ifdarktheme
+
+\DeclareOption{dark}
+{
+    \darkthemetrue
+}
+\ProcessOptions
+
+
+
+%%%%%%%%%%%%%%%
+% Color stuff
+%%%%%%%%%%%%%%%
+
+
+% \darkthemetrue
+
+\ifdarktheme
+% dark colored theme
+\usecolortheme[overlystylish]{CCRMAdark}
+\else
+% light colored theme
+\usecolortheme{CCRMAlight}
+\fi
+
+
+
+\usetheme{Madrid} % Madrid, Pittsburgh, Singapore, Copenhagen, Warsaw
+\setbeamertemplate{items}[default] % ball, circle, rectangle and default
+\setbeamersize{text margin left=1cm, text margin right=1cm}
+% \useoutertheme{}
+\usefonttheme[onlymath]{serif}
+
+
+
+
+% add a new command (and internal variable) to hold the author's email
+\def\@authoremail{}
+\newcommand{\authoremail}[1]{
+  \def\@authoremail{#1}
+}
+
+\institute[CCRMA]{
+    % Center for Computer Research in Music and Acoustics -
+    CCRMA\\
+    Department of Music\\
+    Stanford University\\
+    Stanford CA, 94305
+}
+
+% \logo{\includegraphics[scale=0.1]{ccrma-logo.pdf}}
+
+\titlegraphic{
+    \begin{minipage}[c]{120pt}
+        \includegraphics[scale=0.1]{ccrma-logo.pdf}
+    \end{minipage}
+    \begin{minipage}[c]{60pt}
+        \includegraphics[scale=0.2]{stanford-logo.pdf}
+    \end{minipage}
+}
+
+
+
+% \defbeamertemplate*{title page}{customized}[1][]
+% {
+%     \centering
+%     % \usebeamercolor[fg]{title}
+%     \begin{beamerboxesrounded}[shadow=false]{}
+%     \centering
+%     \usebeamerfont{title}\Huge{\inserttitle\par}
+%     \usebeamerfont{subtitle}\insertsubtitle\par
+%     \end{beamerboxesrounded}
+
+%     \bigskip
+%     \bigskip
+
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         % \begin{flushright}
+%         \includegraphics[height=1.4cm]{stanford-logo.pdf}\\
+%         \vspace{2mm}
+%         \includegraphics[height=0.8cm]{ccrma-logo.pdf}
+%         % \end{flushright}
+%     \end{minipage}
+%     \hspace{1mm}
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         % \begin{flushleft}
+%         \usebeamerfont{author}\insertauthor\par
+%         \usebeamerfont{author}\texttt{\scriptsize{\@authoremail}}\par
+%         \bigskip
+%         \usebeamerfont{institute}\insertinstitute\par
+%         \usebeamerfont{date}\insertdate\par
+%         % \end{flushleft}
+%     \end{minipage}
+% }
+
+
+% remove the footer in the title page
+\def\@cleantitlepage{}
+\newcommand{\cleantitlepage}{
+    {
+        \setbeamertemplate{footline}{}
+        \begin{frame}
+        \titlepage
+        \end{frame}
+    }
+    \addtocounter{framenumber}{-1}
+}
+
+
+\defbeamertemplate*{title page}{CCRMA}[1][]
+{
+  \vbox{}
+  \vfill
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center,#1,rounded=true,shadow=false]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor\newline\url{\@authoremail}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+  \vfill
+}
+
+% disable the navigation buttons at the bottom of the slides
+\beamertemplatenavigationsymbolsempty
+
+
+% \usefonttheme[onlylarge]{structuresmallcapsserif}
+% \usefonttheme[onlysmall]{structurebold}
+
+
+\mode
+<all>
