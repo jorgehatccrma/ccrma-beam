@@ -9,7 +9,7 @@
 
 \definecolor{CCRMAblue}{RGB}{39, 70, 109} % this should probably be passed as an option
 \setbeamercolor*{structure}{fg=CCRMAblue!50!black}
-\setbeamercolor*{normal text}{fg=black!20!white,bg=CCRMAblue!75!black}
+\setbeamercolor*{normal text}{fg=black!20!white,bg=CCRMAblue!25!black}
 
 \DeclareOption{overlystylish}
 {
@@ -24,7 +24,6 @@
 \mode<presentation>
 
 \setbeamercolor*{example text}{fg=green!45!black}
-
 
 \setbeamercolor{palette primary}{use={structure,normal text},fg=structure.fg,bg=normal text.bg!75!black}
 \setbeamercolor{palette secondary}{use={structure,normal text},fg=structure.fg,bg=normal text.bg!60!black}
@@ -50,7 +49,18 @@
 \setbeamercolor*{separation line}{}
 \setbeamercolor*{fine separation line}{}
 
-\setbeamercolor{item}{fg=orange!60!black}
+\setbeamercolor{itemize item}{fg=orange!60!black}
+\setbeamercolor{itemize subitem}{fg=orange!50!black}
+\setbeamercolor{itemize subsubitem}{fg=orange!40!black}
+\setbeamercolor{enumerate item}{fg=normal text.fg}
+\setbeamercolor{enumerate subitem}{fg=normal text.fg}
+\setbeamercolor{enumerate subsubitem}{fg=normal text.fg}
+
+\setbeamercolor{section in toc}{fg=normal text.fg}
+\setbeamercolor{section in toc shaded}{fg=normal text.fg}
+
+\setbeamercolor{title}{fg=CCRMAblue!5!white}
+\setbeamercolor{subtitle}{fg=CCRMAblue!15!white}
 
 \mode
 <all>

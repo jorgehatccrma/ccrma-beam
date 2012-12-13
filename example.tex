@@ -1,12 +1,12 @@
 \documentclass{beamer}
 
-\usetheme[dark]{CCRMA}
+\usetheme{CCRMA}
 
 % presentation "meta-data"
 \title{A sample presentation}
 \subtitle{Using the CCRMA theme, with a very long subtitle to test how it gets displayed}
 \author{Jorge Herrera}
-\authoremail{jorgeh@ccrma.stanford.edu}
+% \authoremail{jorgeh@ccrma.stanford.edu} % specific of the CCRMA beamer theme
 \date
 
 
@@ -14,13 +14,27 @@
 % Actual presentation
 \begin{document}
 
-\cleantitlepage
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
 
+
+\begin{frame}[plain]
+    \tableofcontents
+\end{frame}
 
 \section[Intro]{Introduction}
+\begin{frame}[plain]
+    \tableofcontents[currentsection]
+\end{frame}
+
 \begin{frame}\frametitle{First page}
     \begin{itemize}
     \item You say yes
+        \begin{itemize}
+        \item sometimes
+        \end{itemize}
     \item I say no
     \end{itemize}
 
@@ -37,8 +51,17 @@
     \end{enumerate}
 \end{frame}
 
+\subsection[SubIntro]{Some further details}
+\begin{frame}\frametitle{Further details}
+Testing
+\end{frame}
+
 
 \section[Cont]{Continuation}
+\begin{frame}[plain]
+    \tableofcontents[currentsection]
+\end{frame}
+
 \begin{frame}\frametitle{Another page}
 
     \begin{block}{Block title}
