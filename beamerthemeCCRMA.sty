@@ -16,8 +16,8 @@
 % \darkthemetrue
 
 \ifdarktheme
-% \usecolortheme[overlystylish]{CCRMAdark}
-\usecolortheme{CCRMAdark}
+\usecolortheme[overlystylish]{CCRMAdark}
+% \usecolortheme{CCRMAdark}
 \else
 \usecolortheme{CCRMAlight}
 \fi
@@ -29,10 +29,10 @@
 \setbeamersize{text margin left=1cm, text margin right=1cm}
 \usefonttheme[onlymath]{serif}
 \setbeamertemplate{sections/subsections in toc}[sections numbered]
-\useoutertheme[subsection = false]{miniframes}
+% \useoutertheme[subsection = false]{miniframes}
 
 % add a new command (and internal variable) to hold the author's email
-\def\@authoremail{}
+\def\@authoremail{ }
 \newcommand{\authoremail}[1]{
   \def\@authoremail{#1}
 }

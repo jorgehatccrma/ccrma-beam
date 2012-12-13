@@ -14,7 +14,7 @@
 \DeclareOption{overlystylish}
 {
   \def\beamer@cta@do{
-    \setbeamertemplate{background canvas}[vertical shading][bottom=CCRMAblue!26!black,top=CCRMAblue!30!black,middle=black]
+    \setbeamertemplate{background canvas}[vertical shading][bottom=CCRMAblue!26!black,top=CCRMAblue!10!black,middle=black]
   }
 }
 \ProcessOptions
@@ -49,18 +49,28 @@
 \setbeamercolor*{separation line}{}
 \setbeamercolor*{fine separation line}{}
 
-\setbeamercolor{itemize item}{fg=orange!60!black}
-\setbeamercolor{itemize subitem}{fg=orange!50!black}
-\setbeamercolor{itemize subsubitem}{fg=orange!40!black}
-\setbeamercolor{enumerate item}{fg=normal text.fg}
-\setbeamercolor{enumerate subitem}{fg=normal text.fg}
-\setbeamercolor{enumerate subsubitem}{fg=normal text.fg}
+% \setbeamercolor{itemize item}{fg=orange!60!black}
+% \setbeamercolor{itemize subitem}{fg=orange!50!black}
+% \setbeamercolor{itemize subsubitem}{fg=orange!40!black}
+% \setbeamercolor{enumerate item}{fg=normal text.fg}
+% \setbeamercolor{enumerate subitem}{fg=normal text.fg}
+% \setbeamercolor{enumerate subsubitem}{fg=normal text.fg}
+
+\setbeamercolor{itemize item}{fg=normal text.fg!90!CCRMAblue}
+\setbeamercolor{itemize subitem}{fg=normal text.fg!60!CCRMAblue}
+\setbeamercolor{itemize subsubitem}{fg=normal text.fg!40!CCRMAblue}
+\setbeamercolor{enumerate item}{fg=normal text.fg!90!CCRMAblue}
+\setbeamercolor{enumerate subitem}{fg=normal text.fg!60!CCRMAblue}
+\setbeamercolor{enumerate subsubitem}{fg=normal text.fg!40!CCRMAblue}
+
 
 \setbeamercolor{section in toc}{fg=normal text.fg}
 \setbeamercolor{section in toc shaded}{fg=normal text.fg}
 
 \setbeamercolor{title}{fg=CCRMAblue!5!white}
 \setbeamercolor{subtitle}{fg=CCRMAblue!15!white}
+
+\setbeamercolor{caption name}{fg=CCRMAblue!50!normal text.fg}
 
 \mode
 <all>

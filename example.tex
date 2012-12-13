@@ -1,12 +1,12 @@
 \documentclass{beamer}
 
-\usetheme{CCRMA}
+\usetheme[]{CCRMA}    % you can specify the option 'dark' to use a dark background
 
 % presentation "meta-data"
 \title{A sample presentation}
 \subtitle{Using the CCRMA theme, with a very long subtitle to test how it gets displayed}
 \author{Jorge Herrera}
-% \authoremail{jorgeh@ccrma.stanford.edu} % specific of the CCRMA beamer theme
+\authoremail{jorgeh@ccrma.stanford.edu} % specific of the CCRMA beamer theme
 \date
 
 
@@ -34,6 +34,10 @@
     \item You say yes
         \begin{itemize}
         \item sometimes
+            \begin{itemize}
+            \item Testing a third level
+            \item (I don't feel very creative right now)
+            \end{itemize}
         \end{itemize}
     \item I say no
     \end{itemize}
@@ -48,10 +52,15 @@
     \begin{enumerate}
     \item You say goodbye
     \item and I say hello
+        \begin{enumerate}
+        \item Second level enumeration
+            \begin{enumerate}
+            \item Third level
+            \end{enumerate}
+        \end{enumerate}
     \end{enumerate}
 \end{frame}
 
-\subsection[SubIntro]{Some further details}
 \begin{frame}\frametitle{Further details}
 Testing
 \end{frame}
@@ -62,6 +71,7 @@ Testing
     \tableofcontents[currentsection]
 \end{frame}
 
+\subsection[First]{First Part}
 \begin{frame}\frametitle{Another page}
 
     \begin{block}{Block title}
@@ -78,5 +88,35 @@ Testing
 
 \end{frame}
 
+
+\subsection[Second]{Second Part}
+\begin{frame}{Example of a table}
+    \begin{center}
+        \begin{tabular}{l c c}
+        \bf Name & \bf RMS & \bf Total \\
+        \hline
+        Nando & 8 & 10 \\
+        Carr & 9 & 9 \\
+        \hline
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}{How to include an image}
+    \begin{figure}
+        \includegraphics[width=0.5\textwidth]{stanford-logo.pdf}
+        \caption{Who's logo is this?}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Using columns in a frame}
+    \begin{columns}[t]
+        \column{0.4\textwidth}
+            This is content of the first column. You can use as many columns as you like, using the \texttt{columns} environment in \texttt{beamer}
+        \column{0.4\textwidth}
+            In the second column you can do what you like, like adding an image, for instance.
+            \includegraphics[width=\textwidth]{ccrma-logo.pdf}
+    \end{columns}
+\end{frame}
 
 \end{document}
