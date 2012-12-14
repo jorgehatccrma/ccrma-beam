@@ -6,6 +6,11 @@
 %   customtitle:  use a custom title page (including author's email if specified)
 
 \usepackage{multimedia}
+% this line is to fix a weird rendering issue in Adobe Acrobat on frames using the
+% \movie tag with a "poster" image with transparency
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+
 
 % presentation "meta-data"
 \title{A sample presentation}

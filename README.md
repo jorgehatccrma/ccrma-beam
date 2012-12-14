@@ -21,3 +21,7 @@ As you can read on the [Beamer user guide](http://www.tex.ac.uk/CTAN/macros/late
 - The audio file used to illustrate multimedia reproduction was obtained from [Freesound.org](http://www.freesound.org/)
 - Stanford logo was obtained from Stanford's [Identity Toolkit](http://identity.stanford.edu/)
 - CCRMA logo was obtained from Carr (thanks man!)
+
+## Extending the template
+
+All you could possibly need to modify or create a beamer template can be found at the [Beamer user guide](http://www.tex.ac.uk/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf). Another great resource, less comprehensive but extremely clear and addressing all the main issues can be found [here](http://www.math.umbc.edu/~rouben/beamer/).
