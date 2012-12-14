@@ -12,6 +12,8 @@
 \DeclareOption{customtitle}{\customtitlepagetrue}    % use custom title page
 \ProcessOptions
 
+% this line is to fix a weird rendering issue in Adobe Acrobat on frames using the \movie tag
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Defaults using standard Beamer themes
