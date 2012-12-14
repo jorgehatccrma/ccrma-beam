@@ -1,6 +1,11 @@
 \documentclass{beamer}
 
-\usetheme[]{CCRMA}    % you can specify the option 'dark' to use a dark background
+\usetheme[dark, customtitle]{CCRMA}
+% the CCRMA theme offers the following options:
+%   dark:         use a dark theme
+%   customtitle:  use a custom title page (including author's email if specified)
+
+\usepackage{multimedia}
 
 % presentation "meta-data"
 \title{A sample presentation}
@@ -9,13 +14,14 @@
 \authoremail{jorgeh@ccrma.stanford.edu} % specific of the CCRMA beamer theme
 \date
 
+\titlepagecontent{\includegraphics[width=2.5cm]{stanford-logo.pdf}}
 
 
 % Actual presentation
 \begin{document}
 
 \begin{frame}[plain]
-\titlepage
+    \titlepage
 \end{frame}
 \addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
 
@@ -23,11 +29,13 @@
 \begin{frame}[plain]
     \tableofcontents
 \end{frame}
+\addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
 
 \section[Intro]{Introduction}
 \begin{frame}[plain]
     \tableofcontents[currentsection]
 \end{frame}
+\addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
 
 \begin{frame}\frametitle{First page}
     \begin{itemize}
@@ -43,7 +51,7 @@
     \end{itemize}
 
     \begin{equation}
-    \frac{\partial \theta}{\partial x} = \lambda \sin(\alpha x)
+    X(\omega_k) = \sum_{n=0}^{N-1}x(n)e^{-j2\pi kn/N}
     \end{equation}
 
 \end{frame}
@@ -51,7 +59,7 @@
 \begin{frame}\frametitle{Second page}
     \begin{enumerate}
     \item You say goodbye
-    \item and I say hello
+    \item and I say ``$e^{j \pi} = -1$''
         \begin{enumerate}
         \item Second level enumeration
             \begin{enumerate}
@@ -61,8 +69,14 @@
     \end{enumerate}
 \end{frame}
 
+
 \begin{frame}\frametitle{Further details}
-Testing
+Testing sound using Beamer's included multimedia package:
+
+\movie[showcontrols=true]{\includegraphics[height=3ex]{sound.pdf}\hspace{4em}}{154581__ecfike__i-m-all-right.wav}
+% \movie[showcontrols=true]{\includegraphics[height=3ex]{movie.pdf}\hspace{4em}}{154581__ecfike__i-m-all-right.wav}
+% \sound[beatspersample=16, channels=2, samplingrate=44100, encoding=Raw]{\includegraphics[height=8ex]{sound.pdf}}{154581__ecfike__i-m-all-right.wav}
+
 \end{frame}
 
 
@@ -70,6 +84,7 @@ Testing
 \begin{frame}[plain]
     \tableofcontents[currentsection]
 \end{frame}
+\addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
 
 \subsection[First]{First Part}
 \begin{frame}\frametitle{Another page}
