@@ -1,22 +1,30 @@
 \mode<presentation>
 
-\usepackage{varwidth}
+\RequirePackage{varwidth}
 
 \let\Tiny\tiny % hack to remove a the following warning upon compilation of the example:
                % LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available(Font)
 
 \newif\ifdarktheme
 \newif\ifcustomtitlepage
+\newif\ifusegradient
+\newif\ifsimpletheme
 
 \DeclareOption{dark}{\darkthemetrue}    % use dark theme
 \DeclareOption{customtitle}{\customtitlepagetrue}    % use custom title page
+\DeclareOption{gradient}{\usegradienttrue}    % use custom title page
+\DeclareOption{simple}{\simplethemetrue}    % use custom title page
 \ProcessOptions
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Defaults using standard Beamer themes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usetheme{Madrid} % Madrid, Pittsburgh, Singapore, Copenhagen, Warsaw
+\ifsimpletheme
+    \usetheme{Pittsburgh} % Madrid, Pittsburgh, Singapore, Copenhagen, Warsaw
+\else
+    \usetheme{Madrid} % Madrid, Pittsburgh, Singapore, Copenhagen, Warsaw
+\fi
 \usefonttheme[onlymath]{serif}
 \setbeamertemplate{sections/subsections in toc}[sections numbered]
 \setbeamertemplate{items}[default] % ball, circle, rectangle and default
@@ -28,10 +36,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ifdarktheme
-    \usecolortheme[overlystylish]{CCRMAdark}
-    % \usecolortheme{CCRMAdark}
+    \ifusegradient
+        \usecolortheme[gradient]{CCRMAdark}
+    \else
+        \usecolortheme{CCRMAdark}
+    \fi
 \else
-    \usecolortheme{CCRMAlight}
+    \ifusegradient
+        \usecolortheme[gradient]{CCRMAlight} % this is not implemented yet
+    \else
+        \usecolortheme{CCRMAlight}
+    \fi
 \fi
 
 

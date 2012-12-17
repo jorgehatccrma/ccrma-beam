@@ -1,4 +1,17 @@
 % keep it simple!
 
-\definecolor{CCRMAblue}{RGB}{39, 70, 109}
-\usecolortheme[named=CCRMAblue]{structure}
+%\definecolor{CCRMAblue}{RGB}{39, 70, 109}
+%\usecolortheme[named=CCRMAblue]{structure}
+
+\definecolor{CCRMAblue}{RGB}{39, 70, 109} % this should probably be passed as an option
+\setbeamercolor*{structure}{fg=CCRMAblue}
+
+\DeclareOption{gradient}
+{
+  \def\beamer@cta@do{
+    \setbeamertemplate{background canvas}[vertical shading][bottom=CCRMAblue!20!white,top=white,middle=white]
+  }
+}
+\ProcessOptions
+
+\@ifundefined{beamer@cta@do}{}{\beamer@cta@do} % necessary to apply the gradient to the background

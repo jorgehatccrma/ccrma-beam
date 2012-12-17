@@ -11,15 +11,15 @@
 \setbeamercolor*{structure}{fg=CCRMAblue}
 \setbeamercolor*{normal text}{fg=black!20!white,bg=CCRMAblue!25!black}
 
-\DeclareOption{overlystylish}
+\DeclareOption{gradient}
 {
   \def\beamer@cta@do{
-    \setbeamertemplate{background canvas}[vertical shading][bottom=CCRMAblue!26!black,top=CCRMAblue!10!black,middle=black]
+    \setbeamertemplate{background canvas}[vertical shading][bottom=CCRMAblue!26!black,top=CCRMAblue!15!black,middle=black]
   }
 }
 \ProcessOptions
 
-\@ifundefined{beamer@cta@do}{}{\beamer@cta@do}
+\@ifundefined{beamer@cta@do}{}{\beamer@cta@do} % necessary to apply the gradient to the background
 
 \mode<presentation>
 

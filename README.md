@@ -24,4 +24,8 @@ As you can read on the [Beamer user guide](http://www.tex.ac.uk/CTAN/macros/late
 
 ## Extending the template
 
-All you could possibly need to modify or create a beamer template can be found at the [Beamer user guide](http://www.tex.ac.uk/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf). Another great resource, less comprehensive but extremely clear and addressing all the main issues can be found [here](http://www.math.umbc.edu/~rouben/beamer/).
+All you could possibly need to modify or create a beamer template can be found at the [Beamer user guide](http://www.tex.ac.uk/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf).
+
+Another great resource, less comprehensive but extremely clear and addressing all the main issues can be found [here](http://www.math.umbc.edu/~rouben/beamer/).
+
+Finally, a great beamer theme cheat-sheet can be found [here](http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf).
