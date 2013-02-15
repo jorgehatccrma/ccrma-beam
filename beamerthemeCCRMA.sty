@@ -110,17 +110,20 @@
         \end{varwidth}
         \hspace{0.3em}
         \begin{varwidth}[c]{0.4\textwidth}
-            \usebeamerfont{author}\insertauthor
-            \ifx\@authoremail\@empty
-            \else
-            \newline\scriptsize{\url{\@authoremail}}
-            \fi
+            \begin{flushleft}
+                \usebeamerfont{author}\insertauthor
+                \ifx\@authoremail\@empty
+                \else
+                \newline\scriptsize{\url{\@authoremail}}
+                \fi
 
-            \vspace{1.8ex}
-            \usebeamerfont{institute}\insertinstitute
-            \usebeamerfont{date}\insertdate
-            \vspace{1.8ex}
-            \inserttitlegraphic
+                \vspace{1.8ex}
+                \usebeamerfont{institute}\insertinstitute\\
+                \vspace{1.2ex}
+                \usebeamerfont{date}\insertdate
+                \vspace{1.8ex}
+                \inserttitlegraphic
+            \end{flushleft}
         \end{varwidth}
 
       \end{centering}
