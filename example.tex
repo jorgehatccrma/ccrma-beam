@@ -13,6 +13,16 @@
 \pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
 
 
+% we'll use this package to allow absolute position (e.g. for images)
+% this package can take you a long way for custom layouts, although it will put
+% more responsibility on your shoulders. If you want to explore, go to the texpos'
+% documentation: http://www.tex.ac.uk/ctan/macros/latex/contrib/textpos/textpos.pdf
+\usepackage[absolute,overlay]{textpos}
+
+
+\usepackage{rotating}
+
+
 
 % presentation "meta-data"
 \title{CCRMA Beamer Template}
@@ -119,33 +129,57 @@ Since so far only Adobe has implemented embedded AV playback, you will need to u
 
 
 \begin{frame}[plain]{Example of a table}
+
+    \vspace{3cm}
+
     \begin{center}
         \begin{tabular}{c c c}
-        \bf Name & \bf RMS & \bf Total \\
+        \bf Name & \bf x & \bf y \\
         \hline
-        \alpha & 8 & 10 \\
-        \eta & 9 & 9 \\
+        $\alpha$ & 8 & 10 \\
+        $\eta$ & 9 & 9 \\
         \hline
         \end{tabular}
     \end{center}
 
-    \vspace{6cm}
+    \vspace{3cm}
 
     \begin{center}
     \scriptsize
     You can also omit the footer of the page and reclaim that space
     \end{center}
 
-
-
 \end{frame}
 
 \begin{frame}{How to include an image}
+
+    You can insert images the traditional \LaTeX way
+
     \begin{figure}
-        \includegraphics[width=0.5\textwidth]{stanford-logo.pdf}
+        \includegraphics[width=0.3\textwidth]{stanford-logo.pdf}
         \caption{Who's logo is this?}
     \end{figure}
 \end{frame}
+
+
+\begin{frame}{Absolution positioning}
+
+    Or you can use absolute positioning, via the \texttt{texpos} package
+
+  % These vars may be altered to affect how texpos package (e.g. \begin{textblock} \end{textblock}) is used
+  % \setlength{\TPHorizModule}{1cm}
+  % \setlength{\TPVertModule}{1cm}
+
+
+    \begin{textblock}{20}(6,11)
+    \begin{rotate}{33}
+      \includegraphics[width=0.3\textwidth]{ccrma-logo.pdf}
+    \end{rotate}
+    \end{textblock}
+
+
+\end{frame}
+
 
 \begin{frame}{Using columns in a frame}
     \begin{columns}[t]
