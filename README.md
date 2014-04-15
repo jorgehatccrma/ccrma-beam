@@ -7,7 +7,7 @@ CCRMA Beamer Theme
 
 This is a theme to create *LaTeX-Beamer* presentations using CCRMA (Center for Computer Research in Music and Acoustics at Stanford University) colors and logos.
 
-The idea is to facilitate the use of beamer for high-quality academic presentations. It should be noted that my main goal is to generate PDF presentations, which are portable and cross-platform.
+The idea is to facilitate the use of beamer for high-quality academic presentations. My main goal is to generate PDF presentations, which are portable and cross-platform.
 
 ## Multimedia in the generated PDF
 

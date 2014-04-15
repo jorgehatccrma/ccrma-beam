@@ -1,6 +1,6 @@
 \documentclass{beamer}
 
-\usetheme[dark, customtitle, gradient]{CCRMA}
+\usetheme[customtitle, gradient]{CCRMA}
 % the CCRMA theme offers the following options:
 %   dark:         use a dark theme
 %   customtitle:  use a custom title page (including author's email if specified)
@@ -15,8 +15,8 @@
 
 
 % presentation "meta-data"
-\title{A sample presentation with a veeeeeeery loooooong title}
-\subtitle{Using the CCRMA theme, with a very long subtitle to test how it gets displayed}
+\title{CCRMA Beamer Template}
+\subtitle{Sample Presentation}
 \author{Jorge Herrera}
 \authoremail{jorgeh@ccrma.stanford.edu} % specific of the CCRMA beamer theme
 \date
@@ -38,90 +38,106 @@
 \end{frame}
 \addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
 
-\section[Intro]{Introduction}
+\section[Intro]{Intro}
 \begin{frame}[plain]
     \tableofcontents[currentsection]
 \end{frame}
 \addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
 
+\subsection[basics]{The Basics}
+
 \begin{frame}\frametitle{First page}
     \begin{itemize}
     \item You say yes
         \begin{itemize}
-        \item sometimes
-            \begin{itemize}
-            \item Testing a third level
-            \item (I don't feel very creative right now)
-            \end{itemize}
+        \item ...
         \end{itemize}
-    \item I say no
+    \item I say \\
+    \centering
+    $e^{j \pi} == 1?$
     \end{itemize}
-
-    \begin{equation}
-    X(\omega_k) = \sum_{n=0}^{N-1}x(n)e^{-j2\pi kn/N}
-    \end{equation}
 
 \end{frame}
 
 \begin{frame}\frametitle{Second page}
     \begin{enumerate}
     \item You say goodbye
-    \item and I say ``$e^{j \pi} = -1$''
-        \begin{enumerate}
-        \item Second level enumeration
-            \begin{enumerate}
-            \item Third level
-            \end{enumerate}
-        \end{enumerate}
+    \item and I say
+
+    \begin{equation}
+    X(\omega_k) = \sum_{n=0}^{N-1}x(n)e^{-j2\pi kn/N}
+    \end{equation}
+
     \end{enumerate}
 \end{frame}
 
 
+\subsection[av]{Including Audio/Video}
+
 \begin{frame}\frametitle{Further details}
-Testing sound using Beamer's included multimedia package:
+{
+\centering
+Multimedia package test. Can you hear this?
+
+$\downarrow$
 
 \movie[showcontrols=true]{\includegraphics[height=3ex]{sound.pdf}\hspace{4em}}{154581__ecfike__i-m-all-right.wav}
 % \movie[showcontrols=true]{\includegraphics[height=3ex]{movie.pdf}\hspace{4em}}{154581__ecfike__i-m-all-right.wav}
 % \sound[beatspersample=16, channels=2, samplingrate=44100, encoding=Raw]{\includegraphics[height=8ex]{sound.pdf}}{154581__ecfike__i-m-all-right.wav}
 
+\scriptsize
+Since so far only Adobe has implemented embedded AV playback, you will need to use Acrobat as the viewer (haven't tested on Windows, but on OS X neither Preview nor Skim could play them).
+
+}
+
+
 \end{frame}
 
 
-\section[Cont]{Continuation}
+\section[Outro]{Outro}
 \begin{frame}[plain]
     \tableofcontents[currentsection]
 \end{frame}
 \addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
 
-\subsection[First]{First Part}
-\begin{frame}\frametitle{Another page}
+\begin{frame}
 
-    \begin{block}{Block title}
-    Block content
+    \begin{block}{General block title}
+    An idea\footnote{don't use titles if not needed}
     \end{block}
 
-    \begin{example}{Example title}
-    Example content
+    \begin{example}[ex. 1]
+    For example ...
     \end{example}
 
     \begin{alertblock}{Alert title}
-    Alert content
+    \centering
+    \textbf{Or an alert!}
     \end{alertblock}
 
 \end{frame}
 
 
-\subsection[Second]{Second Part}
-\begin{frame}{Example of a table}
+\begin{frame}[plain]{Example of a table}
     \begin{center}
-        \begin{tabular}{l c c}
+        \begin{tabular}{c c c}
         \bf Name & \bf RMS & \bf Total \\
         \hline
-        Nando & 8 & 10 \\
-        Carr & 9 & 9 \\
+        \alpha & 8 & 10 \\
+        \eta & 9 & 9 \\
         \hline
         \end{tabular}
     \end{center}
+
+    \vspace{6cm}
+
+    \begin{center}
+    \scriptsize
+    You can also omit the footer of the page and reclaim that space
+    \end{center}
+
+
+
 \end{frame}
 
 \begin{frame}{How to include an image}
