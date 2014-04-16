@@ -1,3 +1,4 @@
+%!TEX program = lualatex
 \documentclass{beamer}
 
 \usetheme[customtitle, gradient]{CCRMA}
@@ -6,6 +7,47 @@
 %   customtitle:  use a custom title page (including author's email if specified)
 %   gradient:     use a gradient background
 %   simple:       prevent the use of the footer and colored headline
+
+
+% AWESOME Beamer Cheat-sheet:
+% http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
+
+
+% IF USING LUALATEX (OR XELATEX, UNTESTED), IT IS POSSIBLE TO USE SYSTEM FONTS
+% THESE ARE SOME EXAMPLES
+% \usepackage[bitstream-charter]{mathdesign}
+\usepackage{fontspec}
+% \setmainfont{TeX Gyre Bonum}
+% \setsansfont{Source Sans Pro}  % for this you'll need to install "Source Sans Pro" OTF font in your system
+% \setsansfont{Open Sans}  % for this you'll need to install "Open Sans" OTF font in your system
+% \setsansfont{Raleway}  % for this you'll need to install "Raleway" TTF font in your system
+% \setsansfont{Ubuntu}  % for this you'll need to install "Ubuntu" TTF font in your system
+% \setsansfont[BoldFont={Ubuntu Bold}, ItalicFont={Ubuntu Light Italic}, BoldItalicFont={Ubuntu Bold Italic}]{Ubuntu Light}  % for this you'll need to install "Ubuntu" TTF font in your system
+% \setsansfont{PT Sans}
+\setsansfont{Lato}
+% \setmonofont{Source Code Pro}  % for this you'll need to install "Source Code Pro" OTF font in your system
+\setmonofont{Source Code Pro Light}  % for this you'll need to install "Source Code Pro" OTF font in your system
+% \setmonofont{Inconsolata}  % for this you'll need to install "Inconsolata" OTF font in your system
+
+
+\newfontfamily \ccrmaTitleFont {Ubuntu}
+\newfontfamily \alternativeFont {Raleway}
+
+\setbeamerfont{title}{family=\ccrmaTitleFont}
+\setbeamerfont{frametitle}{family=\ccrmaTitleFont}
+\setbeamerfont*{enumerate item}{family=\ccrmaTitleFont}
+\setbeamerfont*{enumerate subitem}{family=\ccrmaTitleFont}
+\setbeamerfont*{enumerate subsubitem}{family=\ccrmaTitleFont}
+\setbeamerfont{section in toc}{family=\ccrmaTitleFont}
+\setbeamerfont{block title}{family=\alternativeFont}
+\setbeamerfont{block title alert}{family=\alternativeFont}
+\setbeamerfont{block title example}{family=\alternativeFont}
+
+
+\usefonttheme[onlylarge]{structurebold}
+
+
+
 
 \usepackage{multimedia}
 % this line is to fix a weird rendering issue in Adobe Acrobat on frames using the
@@ -23,6 +65,11 @@
 \usepackage{rotating}
 
 
+\usepackage{appendixnumberbeamer}
+
+
+
+
 
 % presentation "meta-data"
 \title{CCRMA Beamer Template}
@@ -32,6 +79,11 @@
 \date
 
 \titlepagecontent{\includegraphics[width=2.5cm]{stanford-logo.pdf}}
+
+
+
+
+
 
 
 % Actual presentation
@@ -58,7 +110,7 @@
 
 \begin{frame}\frametitle{First page}
     \begin{itemize}
-    \item You say yes
+    \item You say \textbf{yes}
         \begin{itemize}
         \item ...
         \end{itemize}
@@ -91,7 +143,7 @@ Multimedia package test. Can you hear this?
 
 $\downarrow$
 
-\movie[showcontrols=true]{\includegraphics[height=3ex]{sound.pdf}\hspace{4em}}{154581__ecfike__i-m-all-right.wav}
+\movie[showcontrols=true]{\includegraphics[height=6ex]{sound.pdf}}{154581__ecfike__i-m-all-right.wav}
 % \movie[showcontrols=true]{\includegraphics[height=3ex]{movie.pdf}\hspace{4em}}{154581__ecfike__i-m-all-right.wav}
 % \sound[beatspersample=16, channels=2, samplingrate=44100, encoding=Raw]{\includegraphics[height=8ex]{sound.pdf}}{154581__ecfike__i-m-all-right.wav}
 
@@ -190,5 +242,14 @@ Since so far only Adobe has implemented embedded AV playback, you will need to u
             \includegraphics[width=\textwidth]{ccrma-logo.pdf}
     \end{columns}
 \end{frame}
+
+
+
+\appendix  % this generates a warning, but it doesn't seem to affect the document visually
+
+\begin{frame}{First Extra slide}
+This is an extra slide, so it won't affect the page count displayed at the bottom of the main presentation. Basically, the page counter is reset here.
+\end{frame}
+
 
 \end{document}
