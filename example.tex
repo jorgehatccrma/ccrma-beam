@@ -15,23 +15,36 @@
 
 % IF USING LUALATEX (OR XELATEX, UNTESTED), IT IS POSSIBLE TO USE SYSTEM FONTS
 % THESE ARE SOME EXAMPLES
+
 % \usepackage[bitstream-charter]{mathdesign}
 \usepackage{fontspec}
+
 % \setmainfont{TeX Gyre Bonum}
+% \setmainfont{TeX Gyre Termes}
+\setmainfont{XITS}
+
+
 % \setsansfont{Source Sans Pro}  % for this you'll need to install "Source Sans Pro" OTF font in your system
 % \setsansfont{Open Sans}  % for this you'll need to install "Open Sans" OTF font in your system
 % \setsansfont{Raleway}  % for this you'll need to install "Raleway" TTF font in your system
 % \setsansfont{Ubuntu}  % for this you'll need to install "Ubuntu" TTF font in your system
 % \setsansfont[BoldFont={Ubuntu Bold}, ItalicFont={Ubuntu Light Italic}, BoldItalicFont={Ubuntu Bold Italic}]{Ubuntu Light}  % for this you'll need to install "Ubuntu" TTF font in your system
 % \setsansfont{PT Sans}
-\setsansfont{Lato}
+% \setsansfont{Lato}
+% \setsansfont[BoldFont={Colaborate-Bold}, ItalicFont={Colaborate-Thin}, BoldItalicFont={Colaborate-Medium}]{Colaborate-Regular}
+% \setsansfont{Aller}
+\setsansfont{Asap}
+
 % \setmonofont{Source Code Pro}  % for this you'll need to install "Source Code Pro" OTF font in your system
 \setmonofont{Source Code Pro Light}  % for this you'll need to install "Source Code Pro" OTF font in your system
 % \setmonofont{Inconsolata}  % for this you'll need to install "Inconsolata" OTF font in your system
 
 
-\newfontfamily \ccrmaTitleFont {Ubuntu}
-\newfontfamily \alternativeFont {Raleway}
+% \newfontfamily \ccrmaTitleFont {Ubuntu}
+% \newfontfamily \ccrmaTitleFont {Amaranth}
+\newfontfamily \ccrmaTitleFont {Asap}
+% \newfontfamily \alternativeFont {Raleway}
+\newfontfamily \alternativeFont {Amaranth}
 
 \setbeamerfont{title}{family=\ccrmaTitleFont}
 \setbeamerfont{frametitle}{family=\ccrmaTitleFont}
@@ -130,6 +143,10 @@
     X(\omega_k) = \sum_{n=0}^{N-1}x(n)e^{-j2\pi kn/N}
     \end{equation}
 
+    \begin{equation}
+    z \in \mathbb{C}
+    \end{equation}
+
     \end{enumerate}
 \end{frame}
 
@@ -139,7 +156,7 @@
 \begin{frame}\frametitle{Further details}
 {
 \centering
-Multimedia package test. Can you hear this?
+Multimedia package test: can you hear this?
 
 $\downarrow$
 
@@ -238,7 +255,7 @@ Since so far only Adobe has implemented embedded AV playback, you will need to u
         \column{0.4\textwidth}
             This is content of the first column. You can use as many columns as you like, using the \texttt{columns} environment in \texttt{beamer}
         \column{0.4\textwidth}
-            In the second column you can do what you like, like adding an image, for instance.
+            In the second column you can do whatever you want, like adding an image for example.
             \includegraphics[width=\textwidth]{ccrma-logo.pdf}
     \end{columns}
 \end{frame}
