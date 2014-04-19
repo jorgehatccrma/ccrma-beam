@@ -9,11 +9,13 @@
 \newif\ifcustomtitlepage
 \newif\ifusegradient
 \newif\ifsimpletheme
+\newif\iflightfooter
 
 \DeclareOption{dark}{\darkthemetrue}    % use dark theme
 \DeclareOption{customtitle}{\customtitlepagetrue}    % use custom title page
 \DeclareOption{gradient}{\usegradienttrue}    % use custom title page
 \DeclareOption{simple}{\simplethemetrue}    % use custom title page
+\DeclareOption{simplefootline}{\lightfootertrue}    % use simple (minimal) footline
 \ProcessOptions
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,6 +32,51 @@
 \setbeamertemplate{items}[default] % ball, circle, rectangle and default
 \setbeamersize{text margin left=1cm, text margin right=1cm}
 % \useoutertheme[subsection = false]{miniframes}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Footline customization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\iflightfooter
+    \setbeamertemplate{footline}
+    {
+        \parbox{\textwidth}{
+            \hfill \color{normal text.fg} \insertframenumber{}/\inserttotalframenumber \hspace*{1ex}
+            \vskip2pt
+        }%
+    }
+
+\else
+
+    \setbeamertemplate{footline}
+    {
+        \leavevmode%
+        \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+        \usebeamerfont{author in head/foot}\insertsection
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{title in head/foot}\insertsubsection
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+        \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+        \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+
+\fi
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Equation numbering customization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Color stuff
@@ -102,7 +149,7 @@
             {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
           \fi%
         \end{beamercolorbox}%
-        \vskip1em\par
+        \vskip2em\par
 
         \begin{varwidth}[c]{0.6\textwidth}
             \@titlepagecontent

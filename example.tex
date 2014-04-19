@@ -1,12 +1,13 @@
 %!TEX program = lualatex
 \documentclass{beamer}
 
-\usetheme[customtitle, gradient]{CCRMA}
+\usetheme[customtitle, gradient, simplefootline]{CCRMA}
 % the CCRMA theme offers the following options:
 %   dark:         use a dark theme
 %   customtitle:  use a custom title page (including author's email if specified)
 %   gradient:     use a gradient background
 %   simple:       prevent the use of the footer and colored headline
+%   simplefootline: show only page numbers in the footline
 
 
 % AWESOME Beamer Cheat-sheet:
@@ -40,11 +41,15 @@
 % \setmonofont{Inconsolata}  % for this you'll need to install "Inconsolata" OTF font in your system
 
 
-% \newfontfamily \ccrmaTitleFont {Ubuntu}
+\newfontfamily \ccrmaTitleFont {Ubuntu}
 % \newfontfamily \ccrmaTitleFont {Amaranth}
-\newfontfamily \ccrmaTitleFont {Asap}
+% \newfontfamily \ccrmaTitleFont {Asap}
 % \newfontfamily \alternativeFont {Raleway}
-\newfontfamily \alternativeFont {Amaranth}
+% \newfontfamily \alternativeFont {Amaranth}
+\newfontfamily \alternativeFont {Asap}
+
+\newfontfamily \ccrmaLiteFont {Ubuntu-light}
+
 
 \setbeamerfont{title}{family=\ccrmaTitleFont}
 \setbeamerfont{frametitle}{family=\ccrmaTitleFont}
@@ -57,9 +62,17 @@
 \setbeamerfont{block title example}{family=\alternativeFont}
 
 
-\usefonttheme[onlylarge]{structurebold}
+% \usefonttheme[onlylarge]{structurebold}
+
+\setbeamerfont{footline}{family=\ttfamily}
 
 
+
+\renewcommand{\theequation}{{\small \ccrmaLiteFont\arabic{equation}}}
+% \renewcommand{\theequation}{{\small \ccrmaTitleFont\arabic{equation}}}
+% \renewcommand{\theequation}{{\ttfamily\arabic{equation}}}
+
+\everymath{\color{normal text.fg!70!structure.bg}}
 
 
 \usepackage{multimedia}
@@ -199,7 +212,7 @@ Since so far only Adobe has implemented embedded AV playback, you will need to u
 
 \begin{frame}[plain]{Example of a table}
 
-    \vspace{3cm}
+    \vspace{2cm}
 
     \begin{center}
         \begin{tabular}{c c c}
@@ -211,11 +224,11 @@ Since so far only Adobe has implemented embedded AV playback, you will need to u
         \end{tabular}
     \end{center}
 
-    \vspace{3cm}
+    \vspace{2cm}
 
     \begin{center}
     \scriptsize
-    You can also omit the footer of the page and reclaim that space
+    \hfill You can also omit the footer of a page
     \end{center}
 
 \end{frame}
