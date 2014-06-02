@@ -1,13 +1,14 @@
 %!TEX program = lualatex
 \documentclass{beamer}
 
-\usetheme[customtitle, gradient, simplefootline]{CCRMA}
+\usetheme[customtitle, simplefootline, simple, dark, centerframetitle]{CCRMA}
 % the CCRMA theme offers the following options:
 %   dark:         use a dark theme
 %   customtitle:  use a custom title page (including author's email if specified)
 %   gradient:     use a gradient background
 %   simple:       prevent the use of the footer and colored headline
 %   simplefootline: show only page numbers in the footline
+%   centerframetitle: center frame titles
 
 
 % AWESOME Beamer Cheat-sheet:
@@ -42,18 +43,23 @@
 
 
 \newfontfamily \ccrmaTitleFont {Ubuntu}
+% \newfontfamily \ccrmaTitleFont {Ubuntu-condensed}
 % \newfontfamily \ccrmaTitleFont {Amaranth}
 % \newfontfamily \ccrmaTitleFont {Asap}
 % \newfontfamily \alternativeFont {Raleway}
 % \newfontfamily \alternativeFont {Amaranth}
 % \newfontfamily \alternativeFont {Asap}
-\newfontfamily \alternativeFont {Bitter}
+% \newfontfamily \alternativeFont {Bitter}
+\newfontfamily \alternativeFont {Ubuntu-light}
+% \newfontfamily \alternativeFont {Ubuntu-condensed}
+\newfontfamily \frameTitleFont {Ubuntu-condensed}
+% \newfontfamily \frameTitleFont {Roboto-condensed}
 
 \newfontfamily \ccrmaLiteFont {Ubuntu-light}
 
 
 \setbeamerfont{title}{family=\ccrmaTitleFont}
-\setbeamerfont{frametitle}{family=\ccrmaTitleFont}
+\setbeamerfont{frametitle}{family=\frameTitleFont\addfontfeatures{Scale=1.25}}
 \setbeamerfont*{enumerate item}{family=\ccrmaTitleFont}
 \setbeamerfont*{enumerate subitem}{family=\ccrmaTitleFont}
 \setbeamerfont*{enumerate subsubitem}{family=\ccrmaTitleFont}
@@ -135,7 +141,7 @@
 
 \subsection[basics]{The Basics}
 
-\begin{frame}\frametitle{First page}
+\begin{frame}\frametitle{First page}{subtitle}
     \begin{itemize}
     \item You say \textbf{yes}
         \begin{itemize}
@@ -236,7 +242,7 @@ Since so far only Adobe has implemented embedded AV playback, you will need to u
 
 \begin{frame}{How to include an image}
 
-    You can insert images the traditional \LaTeX way
+    You can insert images the traditional \LaTeX~way
 
     \begin{figure}
         \includegraphics[width=0.3\textwidth]{stanford-logo.pdf}

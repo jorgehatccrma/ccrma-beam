@@ -62,7 +62,13 @@
 % \setbeamercolor{subsection in toc}{fg=structure.fg}
 % \setbeamercolor{subsubsection in toc}{fg=structure.fg!90!black}
 
-\setbeamercolor{title}{fg=CCRMAblue!5!white, bg=CCRMAblue}
+\ifsimpletheme
+    \setbeamercolor{title}{fg=CCRMAblue!5!white}
+    \setbeamercolor{frametitle}{fg=normal text.fg}
+\else
+    \setbeamercolor{title}{fg=CCRMAblue!5!white, bg=CCRMAblue}
+    \setbeamercolor{frametitle}{fg=normal text.fg, bg=structure.fg!60!black}
+\fi
 \setbeamercolor{subtitle}{fg=CCRMAblue!15!white}
 
 \setbeamercolor{subsection in toc}{fg=CCRMAblue!15!lightgray}
@@ -70,7 +76,6 @@
 
 % \setbeamercolor{caption name}{fg=CCRMAblue!50!normal text.fg}
 
-\setbeamercolor{frametitle}{fg=normal text.fg, bg=structure.fg!60!black}
 \setbeamercolor{framesubtitle}{fg=normal text.fg!80!structure.fg}
 \setbeamercolor{footlinecolor}{bg=red}
 

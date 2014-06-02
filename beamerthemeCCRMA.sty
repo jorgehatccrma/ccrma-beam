@@ -10,12 +10,14 @@
 \newif\ifusegradient
 \newif\ifsimpletheme
 \newif\iflightfooter
+\newif\ifcenterframetitle
 
 \DeclareOption{dark}{\darkthemetrue}    % use dark theme
 \DeclareOption{customtitle}{\customtitlepagetrue}    % use custom title page
 \DeclareOption{gradient}{\usegradienttrue}    % use custom title page
 \DeclareOption{simple}{\simplethemetrue}    % use custom title page
 \DeclareOption{simplefootline}{\lightfootertrue}    % use simple (minimal) footline
+\DeclareOption{centerframetitle}{\centerframetitletrue}   % center frame titles
 \ProcessOptions
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,6 +34,7 @@
 \setbeamertemplate{items}[default] % ball, circle, rectangle and default
 \setbeamersize{text margin left=1cm, text margin right=1cm}
 % \useoutertheme[subsection = false]{miniframes}
+% \setbeamertemplate{frametitle}%[default][center]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -184,6 +187,33 @@
     }
 
 \fi
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frame title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% adapted from
+% http://bloerg.net/2012/06/21/customizing-the-frametitle-of-beamer-presentation.html
+
+\ifcenterframetitle
+    \newcommand{\frametitlealign}{center}
+\else
+    \newcommand{\frametitlealign}{left}
+\fi
+
+\setbeamertemplate{frametitle}
+{
+\nointerlineskip
+\begin{beamercolorbox}[sep=0.3cm,\frametitlealign,ht=2.2em,wd=\paperwidth]{frametitle}
+    \vbox{}\vskip-2ex%
+    \strut\insertframetitle\strut
+    \vskip-0.4ex%
+\end{beamercolorbox}
+}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
