@@ -60,6 +60,7 @@
 
 \setbeamerfont{title}{family=\ccrmaTitleFont}
 \setbeamerfont{frametitle}{family=\frameTitleFont\addfontfeatures{Scale=1.25}}
+\setbeamerfont{framesubtitle}{family=\frameTitleFont\addfontfeatures{Scale=1.25}}
 \setbeamerfont*{enumerate item}{family=\ccrmaTitleFont}
 \setbeamerfont*{enumerate subitem}{family=\ccrmaTitleFont}
 \setbeamerfont*{enumerate subsubitem}{family=\ccrmaTitleFont}
@@ -78,6 +79,11 @@
 \renewcommand{\theequation}{{\small \ccrmaLiteFont\arabic{equation}}}
 % \renewcommand{\theequation}{{\small \ccrmaTitleFont\arabic{equation}}}
 % \renewcommand{\theequation}{{\ttfamily\arabic{equation}}}
+
+
+
+
+
 
 % Change the eqn. numbering color
 \makeatletter
@@ -190,7 +196,7 @@
 
 \subsection[av]{Including Audio/Video}
 
-\begin{frame}\frametitle{Further details}
+\begin{frame}\frametitle{Further details}\framesubtitle{(about video)}
 {
 \centering
 Multimedia package test: can you hear this?
@@ -203,8 +209,6 @@ $\downarrow$
 
 \scriptsize
 Since so far only Adobe has implemented embedded AV playback, you will need to use Acrobat as the viewer (haven't tested on Windows, but on OS X neither Preview nor Skim could play them).
-
-And this $\in \infty$ ...
 
 }
 
@@ -254,7 +258,8 @@ And this $\in \infty$ ...
 
     \begin{center}
     \scriptsize
-    \hfill You can also omit the footer of a page
+    \hfill You can also omit the footer of a page by passing the \texttt{plain}
+    option to the frame.
     \end{center}
 
 \end{frame}
@@ -303,9 +308,14 @@ And this $\in \infty$ ...
 
 \appendix  % this generates a warning, but it doesn't seem to affect the document visually
 
-\begin{frame}{First Extra slide}
+\begin{frame}[plain]{First Extra slide}
 This is an extra slide, so it won't affect the page count displayed at the bottom of the main presentation. Basically, the page counter is reset here.
 \end{frame}
+
+\begin{frame}[plain]{As many as you want}
+And this $\triangleq \mathbb{R}$ ...
+\end{frame}
+
 
 
 \end{document}
