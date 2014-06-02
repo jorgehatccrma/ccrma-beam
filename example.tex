@@ -79,7 +79,11 @@
 % \renewcommand{\theequation}{{\small \ccrmaTitleFont\arabic{equation}}}
 % \renewcommand{\theequation}{{\ttfamily\arabic{equation}}}
 
-\everymath{\color{normal text.fg!70!structure.bg}}
+% Change the eqn. numbering color
+\makeatletter
+\let\reftagform@=\tagform@
+\def\tagform@#1{\maketag@@@{\ignorespaces\textcolor{normal text.fg!50!structure.bg}{(#1)}\unskip\@@italiccorr}}
+\renewcommand{\eqref}[1]{\textup{\reftagform@{\ref{#1}}}}
 
 
 \usepackage{multimedia}
@@ -107,9 +111,21 @@
 % presentation "meta-data"
 \title{CCRMA Beamer Template}
 \subtitle{Sample Presentation}
-\author{Jorge Herrera}
-\authoremail{jorgeh@ccrma.stanford.edu} % specific of the CCRMA beamer theme
+\author{Author One \\ Author Two \\[0.7ex] Author Three}  % don't understand why
+                                                          % the second linebreak
+                                                          % is shorter, but this
+                                                          % hack fixes the problem
+% \authoremail{author1@ccrma.stanford.edu} % specific of the CCRMA beamer theme
 \date
+
+\institute[CCRMA]{
+    % Center for Computer Research in Music and Acoustics\\[0.5ex]
+    CCRMA\\
+    Department of Music\\
+    Stanford University%\\
+    %Stanford CA, 94305
+}
+
 
 \titlepagecontent{\includegraphics[width=2.5cm]{stanford-logo.pdf}}
 
@@ -141,15 +157,16 @@
 
 \subsection[basics]{The Basics}
 
-\begin{frame}\frametitle{First page}{subtitle}
+\begin{frame}\frametitle{First page}
     \begin{itemize}
     \item You say \textbf{yes}
         \begin{itemize}
         \item ...
         \end{itemize}
     \item I say \\
-    \centering
-    $e^{j \pi} == 1?$
+    \begin{equation*}
+    e^{j \pi} == 1?
+    \end{equation*}
     \end{itemize}
 
 \end{frame}
@@ -186,6 +203,8 @@ $\downarrow$
 
 \scriptsize
 Since so far only Adobe has implemented embedded AV playback, you will need to use Acrobat as the viewer (haven't tested on Windows, but on OS X neither Preview nor Skim could play them).
+
+And this $\in \infty$ ...
 
 }
 

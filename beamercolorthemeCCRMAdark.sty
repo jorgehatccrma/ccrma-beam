@@ -8,8 +8,8 @@
 % See the file doc/licenses/LICENSE for more details.
 
 \definecolor{CCRMAblue}{RGB}{39, 70, 109} % this should probably be passed as an option
-\setbeamercolor*{structure}{fg=CCRMAblue}
-\setbeamercolor*{normal text}{fg=black!20!white,bg=CCRMAblue!25!black}
+\setbeamercolor*{normal text}{fg=black!30!white,bg=CCRMAblue!25!black}
+\setbeamercolor*{structure}{fg=CCRMAblue!70!normal text.fg}
 
 \DeclareOption{gradient}
 {
@@ -63,20 +63,22 @@
 % \setbeamercolor{subsubsection in toc}{fg=structure.fg!90!black}
 
 \ifsimpletheme
-    \setbeamercolor{title}{fg=CCRMAblue!5!white}
-    \setbeamercolor{frametitle}{fg=normal text.fg}
+    \setbeamercolor{title}{fg=white}
+    \setbeamercolor{subtitle}{fg=structure.fg!50!white}
+    \setbeamercolor{frametitle}{fg=structure.fg}
+    \setbeamercolor{framesubtitle}{fg=normal text.fg!50!frametitle.fg}
 \else
     \setbeamercolor{title}{fg=CCRMAblue!5!white, bg=CCRMAblue}
+    \setbeamercolor{subtitle}{fg=CCRMAblue!15!white}
     \setbeamercolor{frametitle}{fg=normal text.fg, bg=structure.fg!60!black}
+    \setbeamercolor{framesubtitle}{fg=normal text.fg!80!structure.fg}
 \fi
-\setbeamercolor{subtitle}{fg=CCRMAblue!15!white}
 
 \setbeamercolor{subsection in toc}{fg=CCRMAblue!15!lightgray}
 \setbeamercolor{subsubsection in toc}{fg=CCRMAblue!15!gray}
 
 % \setbeamercolor{caption name}{fg=CCRMAblue!50!normal text.fg}
 
-\setbeamercolor{framesubtitle}{fg=normal text.fg!80!structure.fg}
 \setbeamercolor{footlinecolor}{bg=red}
 
 \mode

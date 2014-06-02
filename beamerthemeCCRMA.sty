@@ -112,13 +112,6 @@
   \def\@authoremail{#1}
 }
 
-\institute[CCRMA]{% Center for Computer Research in Music and Acoustics -
-    CCRMA\\
-    Department of Music\\
-    Stanford University%\\
-    %Stanford CA, 94305
-}
-
 
 \def\@titlepagecontent{You should place something here. To do that use the $\backslash$\texttt{titlepagecontent} command}
 \newcommand{\titlepagecontent}[1]{
@@ -154,12 +147,12 @@
         \end{beamercolorbox}%
         \vskip2em\par
 
-        \begin{varwidth}[c]{0.6\textwidth}
+        \begin{varwidth}[c]{0.5\textwidth}
             \@titlepagecontent
             % {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
         \end{varwidth}
         \hspace{0.3em}
-        \begin{varwidth}[c]{0.4\textwidth}
+        \begin{varwidth}[c]{0.5\textwidth}
             \begin{flushleft}
                 \usebeamerfont{author}\insertauthor
                 \ifx\@authoremail\@empty
@@ -209,6 +202,12 @@
 \begin{beamercolorbox}[sep=0.3cm,\frametitlealign,ht=2.2em,wd=\paperwidth]{frametitle}
     \vbox{}\vskip-2ex%
     \strut\insertframetitle\strut
+    {%
+      \ifx\insertframesubtitle\@empty%
+      \else%
+      {\hspace{0.3em}\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+      \fi
+    }%
     \vskip-0.4ex%
 \end{beamercolorbox}
 }
