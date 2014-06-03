@@ -33,7 +33,7 @@ Finally, a great beamer theme cheat-sheet can be found [here][3].
 
 ## License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CCRMA Beamer Theme</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/jorgehatccrma/ccrma-beam" property="cc:attributionName" rel="cc:attributionURL">Jorge Herrera</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CCRMA Beamer Theme</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://ccrma.stanford.edu/~jorgeh/" property="cc:attributionName" rel="cc:attributionURL">Jorge Herrera</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 
 [1]: http://www.tex.ac.uk/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf  "Beamer user guide"
