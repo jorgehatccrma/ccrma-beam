@@ -15,73 +15,83 @@
 % http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
 
 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % IF USING LUALATEX (OR XELATEX, UNTESTED), IT IS POSSIBLE TO USE SYSTEM FONTS
-% THESE ARE SOME EXAMPLES
+% THESE ARE SOME EXAMPLES. TO ENABLE THIS, SET \usesystemfontstrue (see below)
+\newif\ifusesystemfonts
+\usesystemfontstrue
+% \usesystemfontsfalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \usepackage[bitstream-charter]{mathdesign}
-\usepackage{fontspec}
+\ifusesystemfonts
 
-% \setmainfont{TeX Gyre Bonum}
-% \setmainfont{TeX Gyre Termes}
-\setmainfont{XITS}
+    % \usepackage[bitstream-charter]{mathdesign}
+    \usepackage{fontspec}
 
-
-% \setsansfont{Source Sans Pro}  % for this you'll need to install "Source Sans Pro" OTF font in your system
-% \setsansfont{Open Sans}  % for this you'll need to install "Open Sans" OTF font in your system
-% \setsansfont{Raleway}  % for this you'll need to install "Raleway" TTF font in your system
-% \setsansfont{Ubuntu}  % for this you'll need to install "Ubuntu" TTF font in your system
-% \setsansfont[BoldFont={Ubuntu Bold}, ItalicFont={Ubuntu Light Italic}, BoldItalicFont={Ubuntu Bold Italic}]{Ubuntu Light}  % for this you'll need to install "Ubuntu" TTF font in your system
-% \setsansfont{PT Sans}
-% \setsansfont{Lato}
-% \setsansfont[BoldFont={Colaborate-Bold}, ItalicFont={Colaborate-Thin}, BoldItalicFont={Colaborate-Medium}]{Colaborate-Regular}
-% \setsansfont{Aller}
-\setsansfont{Asap}
-
-% \setmonofont{Source Code Pro}  % for this you'll need to install "Source Code Pro" OTF font in your system
-\setmonofont{Source Code Pro Light}  % for this you'll need to install "Source Code Pro" OTF font in your system
-% \setmonofont{Inconsolata}  % for this you'll need to install "Inconsolata" OTF font in your system
+    % \setmainfont{TeX Gyre Bonum}
+    % \setmainfont{TeX Gyre Termes}
+    \setmainfont{XITS}
 
 
-\newfontfamily \ccrmaTitleFont {Ubuntu}
-% \newfontfamily \ccrmaTitleFont {Ubuntu-condensed}
-% \newfontfamily \ccrmaTitleFont {Amaranth}
-% \newfontfamily \ccrmaTitleFont {Asap}
-% \newfontfamily \alternativeFont {Raleway}
-% \newfontfamily \alternativeFont {Amaranth}
-% \newfontfamily \alternativeFont {Asap}
-% \newfontfamily \alternativeFont {Bitter}
-\newfontfamily \alternativeFont {Ubuntu-light}
-% \newfontfamily \alternativeFont {Ubuntu-condensed}
-\newfontfamily \frameTitleFont {Ubuntu-condensed}
-% \newfontfamily \frameTitleFont {Roboto-condensed}
+    % \setsansfont{Source Sans Pro}  % for this you'll need to install "Source Sans Pro" OTF font in your system
+    % \setsansfont{Open Sans}  % for this you'll need to install "Open Sans" OTF font in your system
+    % \setsansfont{Raleway}  % for this you'll need to install "Raleway" TTF font in your system
+    % \setsansfont{Ubuntu}  % for this you'll need to install "Ubuntu" TTF font in your system
+    % \setsansfont[BoldFont={Ubuntu Bold}, ItalicFont={Ubuntu Light Italic}, BoldItalicFont={Ubuntu Bold Italic}]{Ubuntu Light}  % for this you'll need to install "Ubuntu" TTF font in your system
+    % \setsansfont{PT Sans}
+    % \setsansfont{Lato}
+    % \setsansfont[BoldFont={Colaborate-Bold}, ItalicFont={Colaborate-Thin}, BoldItalicFont={Colaborate-Medium}]{Colaborate-Regular}
+    % \setsansfont{Aller}
+    \setsansfont{Asap}
 
-\newfontfamily \ccrmaLiteFont {Ubuntu-light}
+    % \setmonofont{Source Code Pro}  % for this you'll need to install "Source Code Pro" OTF font in your system
+    \setmonofont{Source Code Pro Light}  % for this you'll need to install "Source Code Pro" OTF font in your system
+    % \setmonofont{Inconsolata}  % for this you'll need to install "Inconsolata" OTF font in your system
 
 
-\setbeamerfont{title}{family=\ccrmaTitleFont}
-\setbeamerfont{frametitle}{family=\frameTitleFont\addfontfeatures{Scale=1.25}}
-\setbeamerfont{framesubtitle}{family=\frameTitleFont\addfontfeatures{Scale=1.25}}
-\setbeamerfont*{enumerate item}{family=\ccrmaTitleFont}
-\setbeamerfont*{enumerate subitem}{family=\ccrmaTitleFont}
-\setbeamerfont*{enumerate subsubitem}{family=\ccrmaTitleFont}
-\setbeamerfont{section in toc}{family=\ccrmaTitleFont}
-\setbeamerfont{block title}{family=\alternativeFont}
-\setbeamerfont{block title alert}{family=\alternativeFont}
-\setbeamerfont{block title example}{family=\alternativeFont}
+    \newfontfamily \ccrmaTitleFont {Ubuntu}
+    % \newfontfamily \ccrmaTitleFont {Ubuntu-condensed}
+    % \newfontfamily \ccrmaTitleFont {Amaranth}
+    % \newfontfamily \ccrmaTitleFont {Asap}
+    % \newfontfamily \alternativeFont {Raleway}
+    % \newfontfamily \alternativeFont {Amaranth}
+    % \newfontfamily \alternativeFont {Asap}
+    % \newfontfamily \alternativeFont {Bitter}
+    \newfontfamily \alternativeFont {Ubuntu-light}
+    % \newfontfamily \alternativeFont {Ubuntu-condensed}
+    \newfontfamily \frameTitleFont {Ubuntu-condensed}
+    % \newfontfamily \frameTitleFont {Roboto-condensed}
+
+    \newfontfamily \ccrmaLiteFont {Ubuntu-light}
+
+
+    \setbeamerfont{title}{family=\ccrmaTitleFont}
+    \setbeamerfont{frametitle}{family=\frameTitleFont\addfontfeatures{Scale=1.25}}
+    \setbeamerfont{framesubtitle}{family=\frameTitleFont\addfontfeatures{Scale=1.25}}
+    \setbeamerfont*{enumerate item}{family=\ccrmaTitleFont}
+    \setbeamerfont*{enumerate subitem}{family=\ccrmaTitleFont}
+    \setbeamerfont*{enumerate subsubitem}{family=\ccrmaTitleFont}
+    \setbeamerfont{section in toc}{family=\ccrmaTitleFont}
+    \setbeamerfont{block title}{family=\alternativeFont}
+    \setbeamerfont{block title alert}{family=\alternativeFont}
+    \setbeamerfont{block title example}{family=\alternativeFont}
+
+
+    \renewcommand{\theequation}{{\small \ccrmaLiteFont\arabic{equation}}}
+    % \renewcommand{\theequation}{{\small \ccrmaTitleFont\arabic{equation}}}
+    % \renewcommand{\theequation}{{\ttfamily\arabic{equation}}}
+
+\else
+\fi
 
 
 % \usefonttheme[onlylarge]{structurebold}
 
 \setbeamerfont{footline}{family=\ttfamily}
-
-
-
-\renewcommand{\theequation}{{\small \ccrmaLiteFont\arabic{equation}}}
-% \renewcommand{\theequation}{{\small \ccrmaTitleFont\arabic{equation}}}
-% \renewcommand{\theequation}{{\ttfamily\arabic{equation}}}
-
-
-
 
 
 
@@ -106,8 +116,7 @@
 
 
 \usepackage{rotating}
-
-
+\usepackage{listings}
 \usepackage{appendixnumberbeamer}
 
 
@@ -293,6 +302,37 @@ Since so far only Adobe has implemented embedded AV playback, you will need to u
       \includegraphics[width=0.3\textwidth]{ccrma-logo.pdf}
     \end{rotate}
     \end{textblock}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Code}
+
+    To include code, use the \texttt{listings} package as usual, but you'll need
+    to pass the \texttt{fragile} option to the frame.
+
+    \vspace{1cm}
+
+    {
+    \tiny
+    \begin{lstlisting}
+X0,...,N−1 <- ditfft2(x, N, s):             DFT of (x0, xs, x2s, ..., x(N-1)s):
+if N = 1 then
+    X0 <- x0                                      trivial size-1 DFT base case
+else
+    X0,...,N/2−1 <- ditfft2(x, N/2, 2s)             DFT of (x0, x2s, x4s, ...)
+    XN/2,...,N−1 <- ditfft2(x+s, N/2, 2s)           DFT of (xs, xs+2s, xs+4s, ...)
+    for k = 0 to N/2−1                           combine DFTs of two halves into full DFT:
+        t <- Xk
+        Xk <- t + exp(−2 PI i k/N) Xk+N/2
+        Xk+N/2 <- t − exp(−2 PI i k/N) Xk+N/2
+    endfor
+endif
+    \end{lstlisting}
+    }
 
 
 \end{frame}
