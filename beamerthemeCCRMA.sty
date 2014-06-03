@@ -5,6 +5,7 @@
 
 \RequirePackage{varwidth}
 
+
 \let\Tiny\tiny % hack to remove a the following warning upon compilation of the example:
                % LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available(Font)
 
@@ -14,6 +15,7 @@
 \newif\ifsimpletheme
 \newif\iflightfooter
 \newif\ifcenterframetitle
+\newif\ifcenterauthorinfo
 
 \DeclareOption{dark}{\darkthemetrue}    % use dark theme
 \DeclareOption{customtitle}{\customtitlepagetrue}    % use custom title page
@@ -21,6 +23,9 @@
 \DeclareOption{simple}{\simplethemetrue}    % use custom title page
 \DeclareOption{simplefootline}{\lightfootertrue}    % use simple (minimal) footline
 \DeclareOption{centerframetitle}{\centerframetitletrue}   % center frame titles
+\DeclareOption{centerauthorinfo}{\centerauthorinfotrue} % center author info (including
+                                                        % institute and stuff) in the
+                                                        % title page
 \ProcessOptions
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,9 +121,9 @@
 }
 
 
-\def\@titlepagecontent{You should place something here. To do that use the $\backslash$\texttt{titlepagecontent} command}
-\newcommand{\titlepagecontent}[1]{
-  \def\@titlepagecontent{#1}
+\def\@titlepageinstituelogo{\scriptsize You should place something here. To do that use the $\backslash$\texttt{titlepageinstituelogo\{<your content here>\}} command. If you don't need it, just type \texttt{titlepageinstituelogo\{\}}}
+\newcommand{\titlepageinstituelogo}[1]{
+  \def\@titlepageinstituelogo{#1}
 }
 
 
@@ -131,49 +136,49 @@
     %     \end{flushright}
     % }
 
-    \titlegraphic{
-        \includegraphics[width=0.6\textwidth]{stanford-ccrma-logo.pdf}
-    }
+%    \titlegraphic{
+%        \includegraphics[width=0.6\textwidth]{stanford-ccrma-logo.pdf}
+%    }
 
     \defbeamertemplate*{title page}{CCRMA}[1][]
     {
-      \vbox{}
-      \vfill
-      \begin{centering}
+        \vbox{}
+        \vfill
+        \begin{centering}
+
         \begin{beamercolorbox}[sep=8pt,center,#1,rounded=true,shadow=false]{title}
-          \usebeamerfont{title}\inserttitle\par%
-          \ifx\insertsubtitle\@empty%
-          \else%
-            \vskip0.25em%
-            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-          \fi%
+            \usebeamerfont{title}\inserttitle\par%
+            \ifx\insertsubtitle\@empty%
+            \else%
+                \vskip0.25em%
+                {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+            \fi%
         \end{beamercolorbox}%
         \vskip2em\par
 
-        \begin{varwidth}[c]{0.5\textwidth}
-            \@titlepagecontent
+        \begin{varwidth}[c]{\textwidth}
+            \inserttitlegraphic
             % {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
         \end{varwidth}
-        \hspace{0.3em}
-        \begin{varwidth}[c]{0.5\textwidth}
-            \begin{flushleft}
-                \usebeamerfont{author}\insertauthor
-                \ifx\@authoremail\@empty
-                \else
-                \newline\scriptsize{\url{\@authoremail}}
-                \fi
-
-                \vspace{1.8ex}
-                \usebeamerfont{institute}\insertinstitute\\
-                \vspace{1.2ex}
-                \usebeamerfont{date}\insertdate
-                \vspace{1.8ex}
-                \inserttitlegraphic
-            \end{flushleft}
+        \hspace{1em}
+        \begin{varwidth}[c]{\textwidth}
+            \ifcenterauthorinfo
+                \centering
+            \else
+            \fi
+            \usebeamerfont{author}\insertauthor\par
+            \ifx\@authoremail\@empty
+            \else
+            \scriptsize{\url{\@authoremail}}\par
+            \fi
+            \usebeamerfont{institute}\insertinstitute\newline\par
+            \usebeamerfont{date}\insertdate\newline\par
+            \@titlepageinstituelogo
         \end{varwidth}
 
-      \end{centering}
-      \vfill
+
+        \end{centering}
+        \vfill
     }
 
 \else

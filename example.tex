@@ -9,7 +9,7 @@
 %   simple:       prevent the use of the footer and colored headline
 %   simplefootline: show only page numbers in the footline
 %   centerframetitle: center frame titles
-
+%   centerauthorinfo: center author (and related info) in the title page
 
 % AWESOME Beamer Cheat-sheet:
 % http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
@@ -117,10 +117,7 @@
 % presentation "meta-data"
 \title{CCRMA Beamer Template}
 \subtitle{Sample Presentation}
-\author{Author One \\ Author Two \\[0.7ex] Author Three}  % don't understand why
-                                                          % the second linebreak
-                                                          % is shorter, but this
-                                                          % hack fixes the problem
+\author{Author One \\ Author Two \\ Author Three}
 % \authoremail{author1@ccrma.stanford.edu} % specific of the CCRMA beamer theme
 \date
 
@@ -132,9 +129,16 @@
     %Stanford CA, 94305
 }
 
+\date{\today}
 
-\titlepagecontent{\includegraphics[width=2.5cm]{stanford-logo.pdf}}
+\titlepageinstituelogo{
+    \includegraphics[width=2.5cm]{stanford-ccrma-logo.pdf}
+}
 
+
+\titlegraphic{
+    \includegraphics[width=2.5cm]{stanford-logo.pdf}
+}
 
 
 
