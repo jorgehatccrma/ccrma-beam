@@ -29,6 +29,10 @@
 
 \ifusesystemfonts
 
+    % if you add new fonts to your system you might need to run this command on
+    % a shell:
+    %   luaotfload-tool -v -vvv -u
+
     % \usepackage[bitstream-charter]{mathdesign}
     \usepackage{fontspec}
 
@@ -63,7 +67,9 @@
     % \newfontfamily \alternativeFont {Bitter}
     \newfontfamily \alternativeFont {Ubuntu-light}
     % \newfontfamily \alternativeFont {Ubuntu-condensed}
-    \newfontfamily \frameTitleFont {Ubuntu-condensed}
+    % \newfontfamily \frameTitleFont {Ubuntu-condensed}
+    \newfontfamily \frameTitleFont[BoldFont={Oswald-bold}, ItalicFont={Oswald-light}]{Oswald}
+    % \newfontfamily \frameTitleFont[BoldFont={OstrichSans-bold}]{OstrichSans-medium}
     % \newfontfamily \frameTitleFont {Roboto-condensed}
 
     \newfontfamily \ccrmaLiteFont {Ubuntu-light}
