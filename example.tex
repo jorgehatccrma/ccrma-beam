@@ -1,7 +1,16 @@
 %!TEX program = lualatex
 \documentclass{beamer}
 
-\usetheme[customtitle, simplefootline, simple, centerframetitle]{CCRMA}
+\usetheme[customtitle,
+         simplefootline,
+         simple,
+         % dark,
+         centerframetitle,
+         corners=1pt,
+         blockpadding=0.4em,
+         shadowedblocks,
+         outlineblocks
+         ]{CCRMA}
 % the CCRMA theme offers the following options:
 %   dark:         use a dark theme
 %   customtitle:  use a custom title page (including author's email if specified)
@@ -10,6 +19,11 @@
 %   simplefootline: show only page numbers in the footline
 %   centerframetitle: center frame titles
 %   centerauthorinfo: center author (and related info) in the title page
+%   corners:      block corner radius (e.g. corners=5pt)
+%   blockpadding: block top and bottom padding (e.g. blockpadding=0.2em)
+%   shadowedblocks: display shadowed blocks
+%   outlineblocks: draw outlines for blocks
+
 
 % AWESOME Beamer Cheat-sheet:
 % http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf

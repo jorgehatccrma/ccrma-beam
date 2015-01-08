@@ -4,6 +4,13 @@
 \mode<presentation>
 
 \RequirePackage{varwidth}
+\RequirePackage{kvoptions}
+
+
+\SetupKeyvalOptions{
+    family=CBT,
+    prefix=CBT@
+}
 
 
 \let\Tiny\tiny % hack to remove a the following warning upon compilation of the example:
@@ -17,16 +24,24 @@
 \newif\ifcenterframetitle
 \newif\ifcenterauthorinfo
 
-\DeclareOption{dark}{\darkthemetrue}    % use dark theme
-\DeclareOption{customtitle}{\customtitlepagetrue}    % use custom title page
-\DeclareOption{gradient}{\usegradienttrue}    % use custom title page
-\DeclareOption{simple}{\simplethemetrue}    % use custom title page
-\DeclareOption{simplefootline}{\lightfootertrue}    % use simple (minimal) footline
-\DeclareOption{centerframetitle}{\centerframetitletrue}   % center frame titles
-\DeclareOption{centerauthorinfo}{\centerauthorinfotrue} % center author info (including
+\DeclareVoidOption{dark}{\darkthemetrue}    % use dark theme
+\DeclareVoidOption{customtitle}{\customtitlepagetrue}    % use custom title page
+\DeclareVoidOption{gradient}{\usegradienttrue}    % use custom title page
+\DeclareVoidOption{simple}{\simplethemetrue}    % use custom title page
+\DeclareVoidOption{simplefootline}{\lightfootertrue}    % use simple (minimal) footline
+\DeclareVoidOption{centerframetitle}{\centerframetitletrue}   % center frame titles
+\DeclareVoidOption{centerauthorinfo}{\centerauthorinfotrue} % center author info (including
                                                         % institute and stuff) in the
                                                         % title page
-\ProcessOptions
+
+% chamfered innertheme options (further modified and renamed CCRMA innertheme)
+% (see https://github.com/pmagwene/beamer-theme-collection/blob/master/beamerinnerthemechamfered.sty)
+\DeclareBoolOption[false]{shadowedblocks}
+\DeclareBoolOption[false]{outlineblocks}
+\DeclareStringOption[2pt]{corners}[2pt]
+\DeclareStringOption[0.3em]{blockpadding}[0.3em]
+
+\ProcessKeyvalOptions*
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Defaults using standard Beamer themes
@@ -37,12 +52,26 @@
 \else
     \usetheme{Madrid} % Madrid, Pittsburgh, Singapore, Copenhagen, Warsaw
 \fi
+
+
+\useinnertheme[ \ifCBT@shadowedblocks
+                    realshadow,
+                \fi
+                \ifCBT@outlineblocks
+                    outline,
+                \fi
+                corners=\CBT@corners,
+                padding=\CBT@blockpadding]{CCRMA}
+
+
+
 \usefonttheme[onlymath]{serif}
 \setbeamertemplate{sections/subsections in toc}[sections numbered]
 \setbeamertemplate{items}[default] % ball, circle, rectangle and default
 \setbeamersize{text margin left=1cm, text margin right=1cm}
 % \useoutertheme[subsection = false]{miniframes}
 % \setbeamertemplate{frametitle}%[default][center]
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
