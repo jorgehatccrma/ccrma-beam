@@ -19,3 +19,14 @@
 
 
 \setbeamercolor{footline}{fg=structure.fg}
+
+\setbeamercolor*{example text}{fg=green!60!black}
+\setbeamercolor*{alerted text}{fg=orange!85!red}
+
+
+\setbeamercolor*{block body}{bg=structure.fg!30!white}
+\setbeamercolor*{block body alerted}{bg=alerted text.fg!30!white}
+\setbeamercolor*{block body example}{bg=example text.fg!15!white}
+\setbeamercolor*{block title}{parent=structure,fg=structure.fg!65!black, bg=structure.fg!50!white}
+\setbeamercolor*{block title alerted}{use={normal text,alerted text},fg=alerted text.fg!45!normal text.fg, bg=alerted text.fg!60!white}
+\setbeamercolor*{block title example}{use={normal text,example text},fg=example text.fg!45!normal text.fg, bg=example text.fg!40!white}
