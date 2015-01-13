@@ -200,8 +200,12 @@
             \else
             \scriptsize{\url{\@authoremail}}\par
             \fi
-            \usebeamerfont{institute}\insertinstitute\newline\par
-            \usebeamerfont{date}\insertdate\newline\par
+            \usebeamerfont{institute}\insertinstitute\par
+            \ifx\@date\@empty
+            \else
+            \vspace{1em}
+            \usebeamerfont{date}\insertdate\par
+            \fi
             \@titlepageinstituelogo
         \end{varwidth}
 
