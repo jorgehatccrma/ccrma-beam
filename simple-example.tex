@@ -1,0 +1,209 @@
+%!TEX program = lualatex
+\documentclass{beamer}
+
+\usetheme[customtitle,
+         simplefootline,
+         simple,
+         dark,
+         centerframetitle,
+         corners=1pt,
+         blockpadding=0.4em,
+         shadowedblocks,
+         outlineblocks
+         ]{CCRMA}
+% the CCRMA theme offers the following options:
+%   dark:         use a dark theme
+%   customtitle:  use a custom title page (including author's email if specified)
+%   gradient:     use a gradient background
+%   simple:       prevent the use of the footer and colored headline
+%   simplefootline: show only page numbers in the footline
+%   centerframetitle: center frame titles
+%   centerauthorinfo: center author (and related info) in the title page
+%   corners:      block corner radius (e.g. corners=5pt)
+%   blockpadding: block top and bottom padding (e.g. blockpadding=0.2em)
+%   shadowedblocks: display shadowed blocks
+%   outlineblocks: draw outlines for blocks
+
+
+% AWESOME Beamer Cheat-sheet:
+% http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
+
+
+
+
+
+
+\usepackage{multimedia}
+% this line is to fix a weird rendering issue in Adobe Acrobat on frames using the
+% \movie tag with a "poster" image with transparency
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+
+% we'll use this package to allow absolute position (e.g. for images)
+% this package can take you a long way for custom layouts, although it will put
+% more responsibility on your shoulders. If you want to explore, go to the texpos'
+% documentation: http://www.tex.ac.uk/ctan/macros/latex/contrib/textpos/textpos.pdf
+\usepackage[absolute,overlay]{textpos}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONTENT STARTS HERE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page info
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% presentation "meta-data"
+\title{CCRMA Beamer Template}
+\subtitle{Simple Presentation}
+\author{Author One \\ Author Two \\ Author Three}
+% \authoremail{author1@ccrma.stanford.edu} % specific of the CCRMA beamer theme
+\date
+
+\institute[CCRMA]{
+    % Center for Computer Research in Music and Acoustics\\[0.5ex]
+    CCRMA\\
+    Department of Music\\
+    Stanford University%\\
+    %Stanford CA, 94305
+}
+
+\date{\today}
+
+\titlepageinstituelogo{
+    \includegraphics[width=2.5cm]{stanford-ccrma-logo.pdf}
+}
+
+
+\titlegraphic{
+    \includegraphics[width=2.5cm]{stanford-logo.pdf}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SLIDES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Actual presentation
+\begin{document}
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+\addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
+
+
+\begin{frame}[plain]
+    \tableofcontents
+\end{frame}
+\addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
+
+\section[Intro]{Intro}
+
+\begin{frame}[plain]
+    \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
+
+
+
+\subsection[av]{Including Audio/Video}
+
+\begin{frame}\frametitle{Further details}\framesubtitle{(about video)}
+{
+\centering
+Multimedia package test: can you hear this?
+
+$\downarrow$
+
+\movie[showcontrols=true]{\includegraphics[height=6ex]{sound.pdf}}{154581__ecfike__i-m-all-right.wav}
+% \movie[showcontrols=true]{\includegraphics[height=3ex]{movie.pdf}\hspace{4em}}{154581__ecfike__i-m-all-right.wav}
+% \sound[beatspersample=16, channels=2, samplingrate=44100, encoding=Raw]{\includegraphics[height=8ex]{sound.pdf}}{154581__ecfike__i-m-all-right.wav}
+
+\scriptsize
+Since so far only Adobe has implemented embedded AV playback, you will need to use Acrobat as the viewer (haven't tested on Windows, but on OS X neither Preview nor Skim could play them).
+}
+
+\end{frame}
+
+
+\section[Outro]{Outro}
+
+\begin{frame}[plain]
+    \tableofcontents[currentsection]
+\end{frame}
+\addtocounter{framenumber}{-1}  % so this page is not considered by the page counter
+
+
+
+\begin{frame}{Absolute positioning}
+
+    Or you can use absolute positioning, via the \texttt{texpos} package
+
+  % These vars may be altered to affect how texpos package (e.g. \begin{textblock} \end{textblock}) is used
+  % \setlength{\TPHorizModule}{1cm}
+  % \setlength{\TPVertModule}{1cm}
+
+
+    \begin{textblock}{20}(6,11)
+      \includegraphics[width=0.3\textwidth]{ccrma-logo.pdf}
+    \end{textblock}
+
+
+\end{frame}
+
+
+
+\begin{frame}{Using columns in a frame}
+    \begin{columns}[t]
+        \column{0.4\textwidth}
+            This is content of the first column. You can use as many columns as you like, using the \texttt{columns} environment in \texttt{beamer}
+        \column{0.4\textwidth}
+            In the second column you can do whatever you want, like adding an image for example.
+            \includegraphics[width=\textwidth]{ccrma-logo.pdf}
+    \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+    Showing bullets one at a time
+    \begin{itemize}[<+->]
+        \item Item 1
+        \item Item 2
+    \end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+    Showing bullets one at a time, with a custom text for each
+    \begin{itemize}[<+->]
+        \item Item 1
+        \item Item 2
+    \end{itemize}
+
+    \begin{block}{Definition}
+        \only<1>{Custom text for item 1.}
+        \only<2>{Custom text for item 2.}
+    \end{block}
+
+\end{frame}
+
+
+
+\end{document}
